@@ -16,7 +16,7 @@ def rotate(x1, y1, x2, y2, matrix):
         
     for k in range(y2,y1 + 1,-1):
         matrix[x1][k] = matrix[x1][k-1]
-        min_value = min(min_value, matrix[k][k-1])
+        min_value = min(min_value, matrix[x1][k-1])
         
     matrix[x1][y1+1] = first
     return min_value
