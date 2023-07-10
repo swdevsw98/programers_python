@@ -1,17 +1,10 @@
 def solution(s):
-    arr = list(s)
-    count = 0
-    answer = ''
-    
-    for i in arr :
-        if i == " " :
-            count = 0
-            answer += answer.join(" ")
+    s = list(s)
+    cnt = 0
+    for i in range(len(s)):
+        if s[i] == ' ':
+            cnt = 0
             continue
-        if count % 2 == 0:
-            i = i.upper()
-        else :
-            i = i.lower()
-        count += 1
-        answer += answer.join(i)
-    return answer
+        s[i] = s[i].upper() if cnt % 2 == 0 else s[i].lower()
+        cnt += 1
+    return ''.join(s)
