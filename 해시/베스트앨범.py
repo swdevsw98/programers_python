@@ -9,9 +9,13 @@ def solution(genres, plays):
     for i in range(len(genres)):
         sum_dic[genres[i]] = sum_dic.get(genres[i],0) + plays[i]
         
-    # print(sum_dic, max(sum_dic.values()))
     
     for _ in range(len(sum_dic)):
+        gen = ''
+        valueMax = max(sum_dic.values())
+        for key, value in sum_dic.items():
+            if value == valueMax:
+                gen = key
         sum_dic.pop(gen)
         gens = []
         for idx, j in enumerate(genres):
@@ -19,7 +23,6 @@ def solution(genres, plays):
                 gens.append(idx)
         
         gens.sort()
-        print(gens)
         
         for i in range(2):
             if i == 1 and len(gens) == 1:
